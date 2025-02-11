@@ -11,7 +11,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(to bottom, #ffe6e6, #ffb3b3);
+            background: linear-gradient(to bottom, #adb6e9, #c9c7d8);
             font-family: 'Poppins', sans-serif;
             margin: 0;
             overflow: hidden;
@@ -76,10 +76,10 @@
 
             if (option === 'yes') {
                 // Mostrar imagen si selecciona "Sí"
-                imageContainer.innerHTML = '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZT1N3dDXhfNBzgb5UtC8p72Y4WW2U9Im_XuJ45EsBp6qwgCPMPKy_z07vB5v0Xg_O41c&usqp=CAU" alt="Imagen positiva" width="600">';
+                imageContainer.innerHTML = '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZT1N3dDXhfNBzgb5UtC8p72Y4WW2U9Im_XuJ45EsBp6qwgCPMPKy_z07vB5v0Xg_O41c&usqp=CAU" alt="Imagen positiva" width="350">';
             } else if (option === 'no') {
                 // Mostrar imagen si selecciona "No"
-                imageContainer.innerHTML = '<img src="https://www.mundodeportivo.com/alfabeta/hero/2024/07/vegeta-triste.jpg?width=768&aspect_ratio=16:9&format=nowebp" alt="Imagen negativa" width="600">';
+                imageContainer.innerHTML = '<img src="https://www.mundodeportivo.com/alfabeta/hero/2024/07/vegeta-triste.jpg?width=768&aspect_ratio=16:9&format=nowebp" alt="Imagen negativa" width="350">';
             }
             imageContainer.style.display = 'block';
         }
@@ -93,6 +93,13 @@
         </div>
         <div id="questionContainer" class="hidden">
             <h1><span class="typing">¿Querés ser mi San Valentín? 💖</span></h1>
+            <div style="max-width: 400px; text-align: justify; margin: 0 auto; line-height: 1.5; height: 200px; overflow-y: auto; padding: 10px; border: 1px solid #ccc; border-radius: 10px; background-color: #f9f9f9;">
+                <p>Antes que respondas...</p>
+                <p>Pensé que este va a ser el primer San Valentín que pasemos juntos y si bien no creo que ninguno de los dos tenga una gran conexión con esa fecha porque nunca hemos hablado del tema, consideré que podía hacerte un detalle.</p>
+                <p>Todavía me acuerdo cuando en febrero del año pasado me invitaste a salir por primera vez días después de San Valentín (yo aún no había tomado la iniciativa de hacerlo, la verdad estaba muy nerviosa y no sabía si ibas a querer hacer algo conmigo). En ese tiempo no consideré que podías invitarme a salir un 14 de febrero, porque tal vez sería muy apresurado salir en una fecha que tiene una connotación tan romántica; pero aún así me emocioné como no te haces idea cuando me llegó tu mensaje invitándome a salir a hacer lo que más me gusta, y más encima salir contigo.</p>
+                <p>Si supieras la cantidad de pensamientos que merodeaban por mi mente desde ese momento hasta el instante en el que te vi cuando llegué al lugar... Cómo explicarte lo ansiosa que estaba por encontrarme contigo, tanto que no sabía de qué sacarte tema de conversación. Creo que nunca voy a encontrar explicación al hecho de haberme animado a decirte que sí. Perfectamente podría haber dicho que no por miedo, pero por alguna razón algo en mi interior ni siquiera me permitió pensar en esa oportunidad.</p>
+                <p>No quiero dar más rodeos, ahora te dejo que elijas (hay una única opción correcta).</p>
+            </div>                      
             <div class="buttons">
                 <button class="yes" onclick="showImage('yes')">Sí</button>
                 <button class="no" onclick="showImage('no')">No</button>
