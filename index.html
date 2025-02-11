@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Querés ser mi San Valentín?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #ffe6e6, #ffb3b3);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .hidden {
+            display: none;
+        }
+        .heart {
+            font-size: 50px;
+            cursor: pointer;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .typing {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid black;
+            animation: typing 2s steps(30, end), blink-caret 0.75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: black; }
+        }
+        /* Animación para hacer el desvanecimiento más suave */
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+    <script>
+        function revealQuestion() {
+            // Esperar un poco antes de mostrar la pregunta
+            setTimeout(function() {
+                document.getElementById('intro').classList.add('hidden');
+                document.getElementById('questionContainer').classList.remove('hidden');
+                document.getElementById('questionContainer').classList.add('fade-in');
+            }, 500); // espera 0.5 segundos antes de revelar la pregunta
+        }
+
+        function showImage(option) {
+            var imageContainer = document.getElementById('imageContainer');
+            imageContainer.innerHTML = '';  // Limpiar el contenedor de imagen antes de cargar una nueva
+
+            if (option === 'yes') {
+                // Mostrar imagen si selecciona "Sí"
+                imageContainer.innerHTML = '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZT1N3dDXhfNBzgb5UtC8p72Y4WW2U9Im_XuJ45EsBp6qwgCPMPKy_z07vB5v0Xg_O41c&usqp=CAU" alt="Imagen positiva" width="600">';
+            } else if (option === 'no') {
+                // Mostrar imagen si selecciona "No"
+                imageContainer.innerHTML = '<img src="https://www.mundodeportivo.com/alfabeta/hero/2024/07/vegeta-triste.jpg?width=768&aspect_ratio=16:9&format=nowebp" alt="Imagen negativa" width="600">';
+            }
+            imageContainer.style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div id="intro">
+            <p>Te tengo una pregunta...</p>
+            <div class="heart" onclick="revealQuestion()">❤️</div>
+        </div>
+        <div id="questionContainer" class="hidden">
+            <h1><span class="typing">¿Querés ser mi San Valentín? 💖</span></h1>
+            <div class="buttons">
+                <button class="yes" onclick="showImage('yes')">Sí</button>
+                <button class="no" onclick="showImage('no')">No</button>
+            </div>
+            <div id="imageContainer" class="hidden"></div>
+        </div>
+    </div>
+</body>
+</html>
